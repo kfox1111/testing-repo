@@ -19,6 +19,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3.7.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       
       - name: build containers if changed
         uses: kfox1111/container-build-and-refresh-action@main
