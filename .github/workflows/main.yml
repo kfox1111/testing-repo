@@ -20,3 +20,5 @@ jobs:
       
       - name: build containers if changed
         uses: kfox1111/container-build-and-refresh-action@main
+        with:
+          repo: kfox1111
