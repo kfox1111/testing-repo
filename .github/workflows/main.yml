@@ -39,7 +39,7 @@ jobs:
       - name: Install sbomlyze
         run: |
           curl -sSfL https://raw.githubusercontent.com/rezmoss/sbomlyze/main/install.sh | sh
-          echo "$HOME/bin" >> $GITHUB_PATH
+          sudo mv ./bin/sbomlyze /usr/bin
 
       - name: build containers if changed
         uses: kfox1111/container-build-and-refresh-action@main
