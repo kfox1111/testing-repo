@@ -57,3 +57,31 @@ jobs:
       - name: Show updates
         run: |
           echo '${{ steps.build.outputs.updated }}' | jq .
+
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-results-${{ matrix.os }}-${{ matrix.arch }}
+          path: result-${{ matrix.os }}-${{ matrix.arch }}.json
+
+  combine:
+    needs: build
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+
+    runs-on: ubuntu-24.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download ALL results
+        uses: actions/download-artifact@v4
+        with:
+          path: all-results
+          pattern: build-results-*
+          merge-multiple: true
+      - name: Show updates
+        run: |
+          more all-results/build-results* | cat
