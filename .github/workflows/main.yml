@@ -84,4 +84,4 @@ jobs:
           merge-multiple: true
       - name: Show updates
         run: |
-          more all-results/build-results* | cat
+          more all-results/* | cat
