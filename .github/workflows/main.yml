@@ -27,7 +27,12 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      
+
+      - name: Install Syft
+        uses: anchore/sbom-action/download-syft@v0
+        with:
+          version: v0.23.0
+
       - name: build containers if changed
         uses: kfox1111/container-build-and-refresh-action@main
         with:
