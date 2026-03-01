@@ -11,4 +11,5 @@ permissions:
 jobs:
   build:
     uses: kfox1111/container-build-and-refresh-action/.github/workflows/containers.yml@main
-    repo: ghcr.io/kfox1111/testing-repo
+    with:
+      repo: ghcr.io/kfox1111/testing-repo
