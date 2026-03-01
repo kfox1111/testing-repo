@@ -48,7 +48,12 @@ jobs:
 
       - name: build containers if changed
         uses: kfox1111/container-build-and-refresh-action@main
+        id: build
         with:
           os: linux
           arch: ${{ matrix.arch }}
           repo: ghcr.io/kfox1111/testing-repo
+
+      - name: Show updates
+        run: |
+          echo "${{ steps.build.outputs.updates }}" | jq .
