@@ -87,4 +87,7 @@ jobs:
           merge-multiple: true
       - name: Show updates
         run: |
-          more all-results/* | cat
+          echo Updated contaienrs:
+          for x in all-results/*; do
+            jq -r .[] $x
+          done | uniq
