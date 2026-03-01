@@ -41,6 +41,7 @@ jobs:
           set -e
           mkdir -p bin
           curl -sSfL https://raw.githubusercontent.com/rezmoss/sbomlyze/main/install.sh -b ./bin | sh
+          ls -l ./bin
           sudo mv ./bin/sbomlyze /usr/bin
 
       - name: build containers if changed
