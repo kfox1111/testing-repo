@@ -56,4 +56,4 @@ jobs:
 
       - name: Show updates
         run: |
-          echo "${{ steps.build.outputs.updated }}" | jq .
+          echo '${{ steps.build.outputs.updated }}' | jq .
