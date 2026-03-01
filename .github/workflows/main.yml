@@ -40,7 +40,7 @@ jobs:
         run: |
           set -e
           mkdir -p bin
-          curl -sSfL https://raw.githubusercontent.com/rezmoss/sbomlyze/main/install.sh -d -b ./bin | sh
+          curl -sSfL https://raw.githubusercontent.com/rezmoss/sbomlyze/main/install.sh -b ./bin | sh -x
           ls -l ./bin
           sudo mv ./bin/sbomlyze /usr/bin
 
