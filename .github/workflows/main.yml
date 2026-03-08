@@ -14,3 +14,5 @@ permissions:
 jobs:
   build:
     uses: kfox1111/github-workflow-container-lifecycle/.github/workflows/containers.yml@v1
+    with:
+      postCheckoutBuildScript: "setup.sh"
