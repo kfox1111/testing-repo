@@ -1,4 +1,4 @@
-dependencies
+dependencies:
 - test
 - test2
 context: ../../templates/shared
