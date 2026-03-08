@@ -1,0 +1,7 @@
+dependencies
+- test
+- test2
+context: ../../templates/shared
+containerFile: ../../templates/shared/Dockerfile
+buildArgs:
+  VER: 9
